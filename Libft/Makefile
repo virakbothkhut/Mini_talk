@@ -1,28 +1,40 @@
-# Variables
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: vkhut <vkhut@student.42.fr>                +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/10/07 13:05:16 by vkhut             #+#    #+#              #
+#    Updated: 2024/10/07 13:06:03 by vkhut            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+SRCS = ft_putstr_fd.c \ ft_atoi.c \ ft_putchar_fd.c \ ft_putnbr_fd.c \ ft_putstr_fd.c
+
 CC = gcc
+
 CFLAGS = -Wall -Wextra -Werror
+
 NAME = libft.a
-SRCS = ft_atoi.c
+
 OBJS = $(SRCS:.c=.o)
 
-# Default rule
-all: $(NAME)
 
-# Rule to create the library
-$(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+all:			$(NAME)
 
-# Rule to compile object files
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(NAME):		$(OBJS)
+					ar rcs $(NAME) $(OBJS)
 
-# Clean rule to remove object files
+%.o: %.c 
+				$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
-	rm -f $(OBJS)
+				rm -f $(OBJS)
 
-# Clean all generated files (object files + library)
-fclean: clean
-	rm -f $(NAME)
 
-# Rebuild the project
-re: fclean all
+fclean:clean
+				rm -f $(NAME)
+
+re:fclean all
+
