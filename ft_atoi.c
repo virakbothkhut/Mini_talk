@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkhut <vkhut@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 11:38:26 by vkhut             #+#    #+#             */
-/*   Updated: 2024/10/07 11:42:30 by vkhut            ###   ########.fr       */
+/*   Created: 2024/10/08 16:25:56 by vkhut             #+#    #+#             */
+/*   Updated: 2024/10/08 18:55:09 by vkhut            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "minitalk.h"
 
 int	ft_atoi(const char *str)
 {
@@ -32,15 +32,3 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
-
-// int main(int argc, char **argv)
-// {
-//     // Check if there are any arguments passed
-//     if (argc < 2)
-//     {
-//         printf("Usage: %s <numbers>\n", argv[0]);
-//         return (1);
-//     }
-
-//     return (0);
-// }

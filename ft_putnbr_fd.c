@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: both <both@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: vkhut <vkhut@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 12:22:03 by vkhut             #+#    #+#             */
-/*   Updated: 2024/10/07 18:24:43 by both             ###   ########.fr       */
+/*   Updated: 2024/10/08 18:55:20 by vkhut            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "minitalk.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {

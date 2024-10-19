@@ -6,11 +6,11 @@
 /*   By: vkhut <vkhut@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:40:02 by vkhut             #+#    #+#             */
-/*   Updated: 2024/10/07 11:40:03 by vkhut            ###   ########.fr       */
+/*   Updated: 2024/10/08 18:55:23 by vkhut            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "minitalk.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

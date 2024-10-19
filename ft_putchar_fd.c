@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkhut <vkhut@student.42.fr>                +#+  +:+       +#+        */
+/*   By: both <both@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 11:43:36 by vkhut             #+#    #+#             */
-/*   Updated: 2024/10/07 11:57:44 by vkhut            ###   ########.fr       */
+/*   Created: 2024/10/07 12:29:19 by vkhut             #+#    #+#             */
+/*   Updated: 2024/10/19 15:17:58 by both             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "minitalk.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-	if (fd < 0 || !s)
-		return ;
-	while (*s)
-	{
-		write(fd, s, 1);
-		s++;
-	}
-	write(fd, "\n", 1);
+	write(fd, &c, 1);
 }
