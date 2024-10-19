@@ -3,33 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: both <both@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: vkhut <vkhut@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:11:22 by vkhut             #+#    #+#             */
-/*   Updated: 2024/10/19 15:43:07 by both             ###   ########.fr       */
+/*   Updated: 2024/10/19 18:52:43 by vkhut            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
 void sig_toc(int sig, siginfo_t *siginfo, void *contxt) {
-    static int c_bit = 0;    // Bit index for the current character
-    static char c_word = 0;  // Character being constructed
+    static int c_bit = 0;   
+    static int c_word = 0;  
 
-    (void)siginfo; // Not used
-    (void)contxt;  // Not used
+    (void)siginfo; 
+    (void)contxt;  
 
     if (sig == SIGUSR1) {
-        c_word |= (1 << c_bit); // Set the bit for 1
+        c_word |= (1 << c_bit); 
     }
     c_bit++;
 
-    if (c_bit == 8) { // Character complete
+    if (c_bit == 8) { 
         ft_putchar_fd(c_word, 1);
         if (c_word == '\n') 
 		{
 			ft_putstr_fd("\n",1);
-            ft_putstr_fd(END_SER, 1);
         }
         c_word = 0; 
         c_bit = 0;  
@@ -40,14 +39,14 @@ int main(int ac, char **av) {
     struct sigaction ser_act;
     int pid;
 
-    (void)av; // Ignore unused parameter
+    (void)av; 
     if (ac != 1) {
-        printf("ERROR: No arguments needed\n");
+        printf("ERROR: No arguments required\n");
         return 1;
     }
 
     pid = getpid();
-    printf("Server PID: %d\n", pid);
+    printf("Our Server PID is: %d\n", pid);
 
     ser_act.sa_sigaction = sig_toc;
     ser_act.sa_flags = SA_SIGINFO; 

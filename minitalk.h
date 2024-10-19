@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: both <both@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: vkhut <vkhut@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:11:31 by vkhut             #+#    #+#             */
-/*   Updated: 2024/10/19 14:33:09 by both             ###   ########.fr       */
+/*   Updated: 2024/10/19 18:48:39 by vkhut            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,5 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putnbr_fd(int n, int fd);
-
-
-# define ERROR "\n\033[6;91mAchtung Achtung Achtung!\033[0m"
-# define END_SER "\033[0;90mWRONG NUMBER.\033[0m\n"
 
 #endif

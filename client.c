@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: both <both@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: vkhut <vkhut@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:36:34 by vkhut             #+#    #+#             */
-/*   Updated: 2024/10/19 14:56:50 by both             ###   ########.fr       */
+/*   Updated: 2024/10/19 18:59:23 by vkhut            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ void cto_sig(int ser_pid, char c) {
 
     while (c_bit < 8) {
         if (c & (1 << c_bit)) {
-            kill(ser_pid, SIGUSR1); // Send 1
+            kill(ser_pid, SIGUSR1);
         } else {
-            kill(ser_pid, SIGUSR2); // Send 0
+            kill(ser_pid, SIGUSR2); 
         }
-        usleep(100); // Small delay to allow for signal processing
+        usleep(1000); 
         c_bit++;
     }
 }
@@ -31,7 +31,7 @@ int main(int ac, char **av) {
     int i = 0;
 
     if (ac != 3) {
-        ft_putendl_fd("Usage: ./client <server_pid> <message>", 1);
+        ft_putendl_fd("Attention!!: ./client <server_pid> <message>", 1);
         return (1);
     }
 
@@ -42,11 +42,10 @@ int main(int ac, char **av) {
     }
 
     while (av[2][i]) {
-        cto_sig(ser_pid, av[2][i]); // Send each character
+        cto_sig(ser_pid, av[2][i]); 
         i++;
     }
-
-    cto_sig(ser_pid, '\0'); // Send null character to indicate end of message
+    cto_sig(ser_pid,'\n');
 
     return (0);
 }
